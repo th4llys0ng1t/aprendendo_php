@@ -1,13 +1,13 @@
 <?php
 #Espaço para a declaração de variáveis
 
-$foto = "";
+$foto = "joia_gato.png";
 $endereco_lattes = "000111222333444";
 $ultima_atualizacao = "04/04/2023";
 
 $nome = "Thallyson Kauã dos Santos Vidal";
 $endereco = "Rua Gérson Beniz de Oliveira";
-$logradouro = "Rua Shurupinska Alfa";
+$logradouro = "Rua Bromélias flamejantes";
 $bairro = "Planalto I";
 $cidade = "Mataraca";
 $estado = "Paraíba";
@@ -51,7 +51,7 @@ $francish = "95%";
     </tr>
     <tr>
         <td style="width: 250px">
-            <img src="<?php echo ""?>" alt="Foto Curriculo" width="250" height="350">
+            <img src="<?php echo "$foto"?>" alt="Foto Curriculo" width="250" height="300">
         </td>
         <td colspan="2" style="text-align: left;">
             <p>Endereço Lattes: <?php echo "$endereco_lattes"?></p>
