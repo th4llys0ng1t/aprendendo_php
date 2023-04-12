@@ -41,18 +41,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        
+        form{
+            background-color: green;
+        }
+        table{
+            text-align: center;
+        }
+        .alinhamento{
+            font-family
+
+        }
+        
+        
+        
+
+    </style>
     <title>Cálculo da média mediante</title>
 </head>
 <body>
     <form action="calculo_mediaIFRN.php" method="post">
-
         <table>
-            <tr>
-                <td>Mensagens: <?php echo $msg ?></td>
-            </tr>
+            <div class="alinhamento">
+                <tr>
+                    <td>Mensagens: <?php echo $msg ?></td>
+                </tr>
+            </div>
             <tr>
                 <td>Cálculo da Média do IFRN</td>
-                <td></td>
             </tr>
             <tr>
                 <td><label for="lb1">Nota 1:</label></td>
@@ -74,7 +91,6 @@
                 <td><input type="submit" name="calcular"></td>
             </tr>
         </table>
-
     </form>
     
 </body>
