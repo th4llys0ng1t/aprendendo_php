@@ -46,14 +46,15 @@
 </head>
 <body>
     <form action="calculo_mediaIFRN.php" method="post">
-        <table>
-            <tr>
-                <td>Mensagens: <?php echo $msg ?></td>
+        <table class="fundotable">
+            <tr class="titulo">
+                <td colspan="2">Calculo da média IFRN</td>    
             </tr>
-            <tr>
-                <td>Cálculo da Média do IFRN</td>
+            <tr class="mensage">
+                <td>Mensagens: </td>
+                <td><?php echo $msg ?></td>
             </tr>
-            <tr>
+            <tr class="mensage">
                 <td><label for="lb1">Nota 1:</label></td>
                 <td><input type="text" name="nota1"></td>
             </tr>
@@ -70,7 +71,7 @@
                 <td><input type="text" name="nota4"></td>
             </tr>
             <tr>
-                <td><input type="submit" name="calcular"></td>
+                <td colspan="2"><input type="submit" name="calcular"></td>
             </tr>
         </table>
     </form>
