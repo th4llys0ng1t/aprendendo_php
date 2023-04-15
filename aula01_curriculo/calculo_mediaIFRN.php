@@ -45,36 +45,51 @@
     <title>Cálculo da média mediante</title>
 </head>
 <body>
-    <form action="calculo_mediaIFRN.php" method="post">
-        <table class="fundotable">
-            <tr class="titulo">
-                <td colspan="2">Calculo da média IFRN</td>    
-            </tr>
-            <tr class="mensage">
-                <td>Mensagens: </td>
-                <td><?php echo $msg ?></td>
-            </tr>
-            <tr class="mensage">
-                <td><label for="lb1">Nota 1:</label></td>
-                <td><input type="text" name="nota1"></td>
-            </tr>
-            <tr>
-                <td><label for="lb2">Nota 2:</label></td>
-                <td><input type="text" name="nota2"></td>
-            </tr>
-            <tr>
-                <td><label for="lb3">Nota 3:</label></td>
-                <td><input type="text" name="nota3"></td>
-            </tr>
-            <tr>
-                <td><label for="lb4">Nota 4:</label></td>
-                <td><input type="text" name="nota4"></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" name="calcular"></td>
-            </tr>
-        </table>
-    </form>
+    <div class ="principal">
+        <form action="calculo_mediaIFRN.php" method="post">
+
+            <div class="titulo" class="text-success">
+                <h1>Calculo da média IFRN</h1>
+            </div>
+
+            <div class="mensage">
+                <p>Mensagem: <?php echo $msg ?></p>
+            </div>
+    
+            <div class="nomes">
+                <p><label for="lb1">Nota 1:</label></p> 
+            </div> 
+            <div class="campos">
+                <p><input type="text" name="nota1"></p>
+            </div>
+
+            <div class="nomes">
+                <p><label for="lb2">Nota 2:</label></p>
+            </div>
+            <div class="campos">
+                <p><input type="text" name="nota2"></p>
+            </div> 
+            
+            <div class="nomes">
+                <p><label for="lb3">Nota 3:</label></p>
+            </div>
+            <div class="campos">
+                <p><input type="text" name="nota3"></p>
+            </div>
+    
+            <div class="nomes">
+                <p><label for="lb4">Nota 4:</label></p>
+            </div>
+            <div class="campos">
+                <p><input type="text" name="nota4"></p>
+            </div>
+
+            <div class="botao">
+                <p><input style="width: 350px; height:40px; background-color: aqua; font-size: 20px" type="submit" name="calcular" value="Média"></p>
+            </div>
+
+        </form>
+    </div>
     
 </body>
 </html>
