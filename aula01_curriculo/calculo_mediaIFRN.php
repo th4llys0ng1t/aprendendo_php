@@ -30,7 +30,7 @@
 
         $media = ($nota1*2 + $nota2*2 + $nota3*3 + $nota4*3)/10;
 
-        $msg = "O valor da nota é: ". $media;
+        $msg = "O valor da média é: ". $media;
     }
 
 ?>
@@ -44,7 +44,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <title>Cálculo da média mediante</title>
 </head>
-<body>
+<body class="container-fluid">
     <div class ="principal">
         <form action="calculo_mediaIFRN.php" method="post">
 

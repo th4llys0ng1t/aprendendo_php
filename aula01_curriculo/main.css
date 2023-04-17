@@ -1,5 +1,6 @@
+
 body{
-    background-image: linear-gradient(black, aqua);
+    background-image: linear-gradient(to right, black, aqua);
 }
 
 .principal{
@@ -11,7 +12,7 @@ body{
     text-align: center;
     border-radius: 10px;
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 10px;    
 }
 
 .titulo{
