@@ -1,6 +1,7 @@
 
 body{
     background-image: linear-gradient(to right, black, aqua);
+    display: flex;
 }
 
 .principal{
