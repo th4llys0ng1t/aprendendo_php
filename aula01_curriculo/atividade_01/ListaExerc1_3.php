@@ -44,7 +44,7 @@
         <h1>Calcule seu IMC</h1>
 
         <p><label for="altura">Informe sua altura: <input type="text" name="altura"></label></p>
-        <p><label for="altura">Informe seu peso: <input type="text" name="peso"></label></p>
+        <p><label for="peso">Informe seu peso: <input type="text" name="peso"></label></p>
         
         <p><input type="submit" value="Calcule" name="calcular"></p>
 
