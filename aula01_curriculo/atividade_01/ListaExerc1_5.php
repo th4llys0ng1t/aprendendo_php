@@ -3,14 +3,24 @@
     $valor = "";
     $botao = "";
     $resultado = "";
+    $resto = "";
 
-    $nota200 = "";
     $nota100 = "";
     $nota50 = "";
     $nota20 = "";
     $nota10 = "";
     $nota5 = "";
-    $nota2 = "";
+    $moeda1 = "";
+
+    if(isset($_POST["calculo"])){
+        $botao = $_POST["calculo"];
+
+        if(isset($_POST["vl"])){
+            $valor = $_POST["vl"];
+        }
+
+        
+    }
 
 ?>
 
@@ -31,13 +41,14 @@
         <p><label for="vl">Digite seu valor em R$:  <input type="text" name="vl"></label></p>
         <p><input type="submit" value="Calcule" name="calculo"></p>
 
-        <p>Notas de 200 R$: <?php echo $nota200?></p>
+        <p>O valor digitado foi: <?php echo $valor ?>, decomposto em...</p>
+
         <p>Notas de 100 R$: <?php echo $nota100?></p> 
         <p>Notas de 50 R$: <?php echo $nota50?></p>
         <p>Notas de 20 R$: <?php echo $nota20?></p> 
         <p>Notas de 10 R$: <?php echo $nota10?></p>
         <p>Notas de 5 R$: <?php echo $nota5?></p>
-        <p>Notas de 2 R$: <?php echo $nota2?></p>
+        <p>Moedas de 1 R$: <?php echo $moeda1?></p>
 
     </form> 
 
