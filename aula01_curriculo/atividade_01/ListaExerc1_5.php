@@ -2,15 +2,14 @@
 
     $valor = "";
     $botao = "";
-    $resultado = "";
-    $resto = "";
+    $resultado = 0;
 
-    $nota100 = "";
-    $nota50 = "";
-    $nota20 = "";
-    $nota10 = "";
-    $nota5 = "";
-    $moeda1 = "";
+    $nota100 = 0;
+    $nota50 = 0;
+    $nota20 = 0;
+    $nota10 = 0;
+    $nota5 = 0;
+    $moeda1 = 0;
 
     if(isset($_POST["calculo"])){
         $botao = $_POST["calculo"];
@@ -18,6 +17,39 @@
         if(isset($_POST["vl"])){
             $valor = $_POST["vl"];
         }
+
+        $resultado = $valor;
+        
+        while($resultado>=100){
+            $resultado = $resultado-100;
+            $nota100 = $nota100+1;
+        }
+
+        while($resultado>=50){
+            $resultado = $resultado-50;
+            $nota50 = $nota50+1;
+        }
+
+        while($resultado>=20){
+            $resultado = $resultado-20;
+            $nota20 = $nota20+1;
+        }
+
+        while($resultado>=10){
+            $resultado = $resultado-10;
+            $nota10 = $nota10+1;
+        }
+
+        while($resultado>=5){
+            $resultado = $resultado-5;
+            $nota5 = $nota5+1;
+        }
+
+        while($resultado>=1){
+            $resultado = $resultado-1;
+            $moeda1 = $moeda1+1;
+        }
+        
 
         
     }
