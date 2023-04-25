@@ -2,8 +2,8 @@
 
     $valor = "";
     $botao = "";
+    $msg = "";
     $resultado = 0;
-
     $nota100 = 0;
     $nota50 = 0;
     $nota20 = 0;
@@ -18,18 +18,24 @@
             $valor = $_POST["vl"];
         }
 
+        if($valor==""){
+            $msg = "Cuidado. Você não digitou um valor!!";
+        }else if(){
+            $msg = "Cuidado. Você não digitou um valor!!";
+        }
+
         $resultado = $valor;
-        
+            
         while($resultado>=100){
             $resultado = $resultado-100;
             $nota100 = $nota100+1;
         }
-
+            
         while($resultado>=50){
             $resultado = $resultado-50;
             $nota50 = $nota50+1;
         }
-
+            
         while($resultado>=20){
             $resultado = $resultado-20;
             $nota20 = $nota20+1;
@@ -42,33 +48,32 @@
 
         while($resultado>=5){
             $resultado = $resultado-5;
-            $nota5 = $nota5+1;
+        $nota5 = $nota5+1;
         }
 
         while($resultado>=1){
             $resultado = $resultado-1;
             $moeda1 = $moeda1+1;
         }
-        
-
-        
     }
-
+           
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcule sua grana decomposta</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calcule sua grana decomposta</title>
+    </head>
 <body>
     
     <form action="ListaExerc1_5.php" method="post">
 
         <h1>Calcule a sua grana decomposta</h1>
+
+        <p>Mensagens: <?php echo $msg ?></p>
 
         <p><label for="vl">Digite seu valor em R$:  <input type="text" name="vl"></label></p>
         <p><input type="submit" value="Calcule" name="calculo"></p>
