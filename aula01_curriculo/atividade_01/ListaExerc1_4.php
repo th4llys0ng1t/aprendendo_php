@@ -6,6 +6,7 @@
     $imc = "";
     $resultado = "";
     $botao = "";
+    $erro = "";
 
     if(isset($_POST["calculo"])){
         $botao = $_POST["calculo"];
@@ -13,13 +14,15 @@
         if(isset($_POST["altura"])){
             $altura = $_POST["altura"];
         }
+
         if(isset($_POST["peso"])){
             $peso = $_POST["peso"];
         }
+
         if(isset($_POST["sx"])){
             $sexo = $_POST["sx"];
 
-            $imc = $peso/($altura * $altura);
+            $imc = round($peso/($altura * $altura), 2);
 
             if($sexo == "masculino" || "Masculino"){
                 if($imc < 20.7){
@@ -47,7 +50,7 @@
                     $resultado = "Seu IMC é de ". $imc. ". Você está obeso.";
                 }
             }
-        }
+        }        
     }
 ?>
 
@@ -63,6 +66,8 @@
     <form action="ListaExerc1_4.php" method="post">
 
         <h1>Calcule seu IMC</h1>
+
+        <p>Mensagem: <?php echo $erro?></p>
 
         <p><label for="sx">Sexo:  <input type="text" name="sx"></label></p>
         <p><label for="peso">Peso:  <input type="text" name="peso"></label></p>

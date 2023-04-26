@@ -18,9 +18,7 @@
             $valor = $_POST["vl"];
         }
 
-        if($valor==""){
-            $msg = "Cuidado. Você não digitou um valor!!";
-        }else if(){
+        if($valor==null){
             $msg = "Cuidado. Você não digitou um valor!!";
         }
 
