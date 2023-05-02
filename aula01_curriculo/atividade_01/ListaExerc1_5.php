@@ -52,8 +52,16 @@
                 $moeda1 = $moeda1+1;
             }
             
+        }else if($valor==null){
+
+            $resultado = "";
+            $msg = "É preciso que você digite algo!";
+
         }else{
-            $msg = "Há algo de errado!!";
+
+            $resultado = "";
+            $msg = "Somente valores!";
+
         }
    
     }
