@@ -7,32 +7,34 @@
     $x2 = "";
     $delta = "";
     $boton = "";
+    $erro = "";
 
     if(isset ($_POST["calcular"])){
         $boton = $_POST["calcular"];
 
         if(isset ($_POST["valora"])){
             $a = $_POST["valora"];
-        }else if(empty("valora")){
-            echo "<script>alert('Falta o valor de a')</script>";
         }
 
         if(isset ($_POST["valorb"])){
             $b = $_POST["valorb"];
-        }else if(empty("valorb")){
-            echo "<script>alert('Falta o valor de b')</script>";
         }
 
         if(isset ($_POST["valorc"])){
             $c = $_POST["valorc"];
-        }else if(empty("valorc")){
-            echo "<script>alert('Falta o valor de c')</script>";
         }
 
-        $delta = pow($b, 2)-4*$a*$c;
+        if(is_numeric($a) && is_numeric($b) && is_numeric($c)){
 
-        $x1 = (-$b + sqrt($delta))/2*$a ;
-        $x2 = (-$b - sqrt($delta))/2*$a ;
+            $delta = pow($b, 2)-4*$a*$c;
+            $x1 = (-$b + sqrt($delta))/2*$a ;
+            $x2 = (-$b - sqrt($delta))/2*$a ;
+
+        }else if($a == null || $b == null || $c == null){
+            $erro = "Coloque todos os valores corretamente!";
+        }else{
+            $erro = "Somente valores!";
+        }
 
     }
 
@@ -50,6 +52,8 @@
 
     <form action="ListaExerc1_1.php" method="post">
         <h1>Calcule sua equação de 2° grau</h1>
+
+        <p>Mensagens: <?php echo $erro ?></p>
 
         <p><label for="nt1">Digite a nota a: <input type="text" name="valora"></label></p>
 
