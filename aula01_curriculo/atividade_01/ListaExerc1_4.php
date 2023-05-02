@@ -20,7 +20,11 @@
         }
 
         if(isset($_POST["sx"])){
-            $sexo = $_POST["sx"];
+            $sexo = $_POST["sx"];         
+        }   
+        
+        if(is_numeric($altura) && is_numeric($peso) && $sexo == "Masculino" ||
+        $sexo == "masculino" || $sexo == "Feminino" || $sexo == "feminino"){
 
             $imc = round($peso/($altura * $altura), 2);
 
@@ -50,7 +54,9 @@
                     $resultado = "Seu IMC é de ". $imc. ". Você está obeso.";
                 }
             }
-        }        
+        }else{
+            $erro = "Algo deu errado. Informe as informações adequadamente!!"
+        }
     }
 ?>
 

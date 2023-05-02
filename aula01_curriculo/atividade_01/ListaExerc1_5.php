@@ -18,41 +18,44 @@
             $valor = $_POST["vl"];
         }
 
-        if($valor==null){
-            $msg = "Cuidado. Você não digitou um valor!!";
-        }
+        if(is_numeric($valor)){
 
-        $resultado = $valor;
+            $resultado = $valor;
             
-        while($resultado>=100){
-            $resultado = $resultado-100;
-            $nota100 = $nota100+1;
-        }
+            while($resultado>=100){
+                $resultado = $resultado-100;
+                $nota100 = $nota100+1;
+            }
             
-        while($resultado>=50){
-            $resultado = $resultado-50;
-            $nota50 = $nota50+1;
-        }
+            while($resultado>=50){
+                $resultado = $resultado-50;
+                $nota50 = $nota50+1;
+            }
             
-        while($resultado>=20){
-            $resultado = $resultado-20;
-            $nota20 = $nota20+1;
-        }
+            while($resultado>=20){
+                $resultado = $resultado-20;
+                $nota20 = $nota20+1;
+            }
 
-        while($resultado>=10){
-            $resultado = $resultado-10;
-            $nota10 = $nota10+1;
-        }
+            while($resultado>=10){
+                $resultado = $resultado-10;
+                $nota10 = $nota10+1;
+            }
 
-        while($resultado>=5){
-            $resultado = $resultado-5;
-        $nota5 = $nota5+1;
-        }
+            while($resultado>=5){
+                $resultado = $resultado-5;
+                $nota5 = $nota5+1;
+            }
 
-        while($resultado>=1){
-            $resultado = $resultado-1;
-            $moeda1 = $moeda1+1;
+            while($resultado>=1){
+                $resultado = $resultado-1;
+                $moeda1 = $moeda1+1;
+            }
+            
+        }else{
+            $msg = "Há algo de errado!!";
         }
+   
     }
            
 ?>

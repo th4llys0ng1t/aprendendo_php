@@ -7,6 +7,7 @@
     $media = "";
     $resultado = "";
     $boton = "";
+    $msg = "";
 
     if(isset ($_POST["calcular"])){
         $boton = $_POST["calcular"];
@@ -24,9 +25,13 @@
             $nota4 = $_POST["vl4"];
         }
 
-        $media = ($nota1*2 + $nota2*3 + $nota3*4 + $nota4*5)/14;
-        
-        $resultado = "A média é: ". $media;
+        if(is_numeric($nota1) && is_numeric($nota2) && is_numeric($nota3) && is_numeric($nota4)){
+
+            $media = ($nota1*2 + $nota2*3 + $nota3*4 + $nota4*5)/14;
+            $resultado = "A média é: ". $media;
+        }else{
+            $msg = "Cuidado para não esquecer as notas!";
+        }
         
     }
 
@@ -41,7 +46,9 @@
 </head>
 <body>
     <h1>Calcule sua média ponderada</h1>
-    <form action="ListaExerc1_2.php" method="post">
+    <form action="ListaExerc1_2.php" method="post">[
+        
+        <p>Mensagens: <?php echo ?></p>
 
         <p><label for="1v">Digite o 1° valor: <input type="text" name="vl1"></label></p>
 
