@@ -19,16 +19,16 @@
             $peso = $_POST["peso"];
         }
 
-        if(isset($_POST["sx"])){
-            $sexo = $_POST["sx"];         
+        if(isset($_POST["sexo"])){
+            $sexo = $_POST["sexo"];         
         }   
         
-        if(is_numeric($altura) && is_numeric($peso) && $sexo == "Masculino" ||
-        $sexo == "masculino" || $sexo == "Feminino" || $sexo == "feminino"){
+        if(is_numeric($altura) && is_numeric($peso) && $sexo == "masculino" ||
+        $sexo == "feminino"){
 
             $imc = round($peso/($altura * $altura), 2);
 
-            if($sexo == "masculino" || "Masculino"){
+            if($sexo == "masculino"){
                 if($imc < 20.7){
                     $resultado = "Seu IMC é de ". $imc. ". Você está abaixo do peso.";
                 }else if($imc <= 26.4){
@@ -41,7 +41,7 @@
                     $resultado = "Seu IMC é de ". $imc. ". Você está obeso.";
                 }
             }
-            else if($sexo == "feminino" || "Feminino"){
+            else if($sexo == "feminino"){
                 if($imc < 19.1){
                     $resultado = "Seu IMC é de ". $imc. ". Você está abaixo do peso.";
                 }else if($imc <= 25.8){
@@ -51,12 +51,15 @@
                 }else if($imc <= 32.3){
                     $resultado = "Seu IMC é de ". $imc. ". Você está acima do peso ideal.";
                 }else{
-                    $resultado = "Seu IMC é de ". $imc. ". Você está obeso.";
+                    $resultado = "Seu IMC é de ". $imc. ". Você está obesa.";
                 }
             }
+        }else if(is_numeric($altura) && is_numeric($peso) && $sexo == null){
+            $erro = "Informe o sexo!!";
         }else{
-            $erro = "Algo deu errado. Informe as informações adequadamente!!"
+            $erro = "Informe tudo que for preciso!!";
         }
+        
     }
 ?>
 
@@ -75,7 +78,10 @@
 
         <p>Mensagem: <?php echo $erro?></p>
 
-        <p><label for="sx">Sexo:  <input type="text" name="sx"></label></p>
+        <p>Infome o sexo:
+            <input type="radio" name="sexo" value="masculino">Masculino
+            <input type="radio" name="sexo" value="feminino">Feminino
+        </p>
         <p><label for="peso">Peso:  <input type="text" name="peso"></label></p>
         <p><label for="altura">Altura:  <input type="text" name="altura"></label></p>
         
