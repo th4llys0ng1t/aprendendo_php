@@ -27,8 +27,8 @@
         if(is_numeric($a) && is_numeric($b) && is_numeric($c)){
 
             $delta = pow($b, 2)-4*$a*$c;
-            $x1 = (-$b + sqrt($delta))/2*$a ;
-            $x2 = (-$b - sqrt($delta))/2*$a ;
+            $x1 = round((-$b + sqrt($delta))/2*$a, 2) ;
+            $x2 = round((-$b - sqrt($delta))/2*$a, 2) ;
 
         }else if($a == null || $b == null || $c == null){
             $erro = "Coloque todos os valores corretamente!";
