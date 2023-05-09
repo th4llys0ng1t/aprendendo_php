@@ -31,6 +31,10 @@
 
         if($_POST["tipo_media"] == "aritmetica"){
             $media = mediaAritmetica($nota1, $nota2, $nota3, $nota4);
+        }else if($_POST["tipo_media"] == "ponderada"){
+            $media = mediaPonderada($nota1, $nota2, $nota3, $nota4);
+        }else if($_POST["tipo_media"] == "harmonica"){
+            $media = mediaHarmonica($nota1, $nota2, $nota3, $nota4);
         }
 
     }
@@ -40,6 +44,19 @@
         $mediaArit = "";
         $mediaArit = ($nota1 + $nota2 + $nota3 + $nota4)/4;
         return $mediaArit;
+
+    }
+    function mediaPonderada($nota1, $nota2, $nota3, $nota4){
+
+        $mediaPond = "";
+        $mediaPond = ($nota1*2 + $nota2*2 + $nota3*3 + $nota4*3)/10;
+        return $mediaPond;
+
+    }
+    function(){
+
+        $mediaHarm = "";
+        $mediaHarm = 
 
     }
 
