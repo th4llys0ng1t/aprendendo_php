@@ -1,13 +1,14 @@
 <?php 
 
     $msg = "";
-    $result = "";
-    $nota1 = "";
-    $nota2 = "";
-    $nota3 = "";
-    $nota4 = "";
-    $media = "";
+    $result = 0;
+    $nota1 = 0;
+    $nota2 = 0;
+    $nota3 = 0;
+    $nota4 = 0;
+    $media = 0;
     $botao = "";
+    $tipoMedia = "";
 
     if(isset($_POST["calculo"])){
         $botao = $_POST["calculo"];
@@ -28,35 +29,42 @@
             $nota1 = $_POST["n4"];
 
         }
-
-        if($_POST["tipo_media"] == "aritmetica"){
-            $media = mediaAritmetica($nota1, $nota2, $nota3, $nota4);
-        }else if($_POST["tipo_media"] == "ponderada"){
-            $media = mediaPonderada($nota1, $nota2, $nota3, $nota4);
-        }else if($_POST["tipo_media"] == "harmonica"){
-            $media = mediaHarmonica($nota1, $nota2, $nota3, $nota4);
+        if(isset($_POST["tipo_media"])){
+            $tipoMedia = $_POST["tipo_media"];
         }
 
-    }
+        function mediaAritmetica($nota1, $nota2, $nota3, $nota4){
 
-    function mediaAritmetica($nota1, $nota2, $nota3, $nota4){
+            $mediaArit = 0;
+            $mediaArit = ($nota1 + $nota2 + $nota3 + $nota4)/4;
+            return $mediaArit;
+    
+        }
+        function mediaPonderada($nota1, $nota2, $nota3, $nota4){
+    
+            $mediaPond = 0;
+            $mediaPond = (($nota1*2) + ($nota2*2) + ($nota3*3) + ($nota4*3))/10;
+            return $mediaPond;
+    
+        }
+        function mediaHarmonica($nota1, $nota2, $nota3, $nota4){
+    
+            $mediaHarm = 0;
+            $mediaHarm = 4/(1/$nota1) + (1/$nota2) + (1/$nota3) + (1/$nota4);
+            return $mediaHarm;
 
-        $mediaArit = "";
-        $mediaArit = ($nota1 + $nota2 + $nota3 + $nota4)/4;
-        return $mediaArit;
+        }
 
-    }
-    function mediaPonderada($nota1, $nota2, $nota3, $nota4){
-
-        $mediaPond = "";
-        $mediaPond = ($nota1*2 + $nota2*2 + $nota3*3 + $nota4*3)/10;
-        return $mediaPond;
-
-    }
-    function(){
-
-        $mediaHarm = "";
-        $mediaHarm = 
+        if($tipoMedia == "aritmetica"){
+            $media = mediaAritmetica($nota1, $nota2, $nota3, $nota4);
+            $result = $media;
+        }else if($tipoMedia == "ponderada"){
+            $media = mediaPonderada($nota1, $nota2, $nota3, $nota4);
+            $result = $media;
+        }else if($tipoMedia == "harmonica"){
+            $media = mediaHarmonica($nota1, $nota2, $nota3, $nota4);
+            $result = $media;
+        }
 
     }
 
@@ -84,7 +92,7 @@
         </h4>
         
         <p>
-            <input type="radio" name="tipo_media" value="aritmetica" checked>Aritmética <br>
+            <input type="radio" name="tipo_media" value="aritmetica">Aritmética <br>
             <input type="radio" name="tipo_media" value="ponderada">Ponderada <br>
             <input type="radio" name="tipo_media" value="harmonica">Harmônica
         </p>
