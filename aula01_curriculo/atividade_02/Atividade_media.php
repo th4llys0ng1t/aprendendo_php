@@ -18,15 +18,15 @@
         }
 
         if(isset($_POST["n2"])){
-            $nota1 = $_POST["n2"];
+            $nota2 = $_POST["n2"];
 
         }
         if(isset($_POST["n3"])){
-            $nota1 = $_POST["n3"];
+            $nota3 = $_POST["n3"];
 
         }
         if(isset($_POST["n4"])){
-            $nota1 = $_POST["n4"];
+            $nota4 = $_POST["n4"];
 
         }
         if(isset($_POST["tipo_media"])){
@@ -50,20 +50,22 @@
         function mediaHarmonica($nota1, $nota2, $nota3, $nota4){
     
             $mediaHarm = 0;
-            $mediaHarm = 4/(1/$nota1) + (1/$nota2) + (1/$nota3) + (1/$nota4);
+            $mediaHarm = 4/((1/$nota1) + (1/$nota2) + (1/$nota3) + (1/$nota4));
             return $mediaHarm;
 
         }
 
         if($tipoMedia == "aritmetica"){
             $media = mediaAritmetica($nota1, $nota2, $nota3, $nota4);
-            $result = $media;
+            $result = round($media, 2);
         }else if($tipoMedia == "ponderada"){
             $media = mediaPonderada($nota1, $nota2, $nota3, $nota4);
-            $result = $media;
+            $result = round($media, 2);
         }else if($tipoMedia == "harmonica"){
             $media = mediaHarmonica($nota1, $nota2, $nota3, $nota4);
-            $result = $media;
+            $result = round($media, 2);
+        }else if($tipoMedia == null){
+            $msg = "Selecione algum tipo de média.";
         }
 
     }
