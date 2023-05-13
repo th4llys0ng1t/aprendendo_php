@@ -82,7 +82,7 @@
 </head>
 <body>
     
-    <form action="Atividade_media.php" method="post">
+    <form action="ExercLista2_1.php" method="post">
 
         <h1>Calcule sua média IFRN</h1>
 
