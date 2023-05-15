@@ -2,11 +2,15 @@
 
     $calculo = 0;
     $result = 0;
+    $diferenca = 0;
     $n = 0;
     $p = 0;
+    $resultN = 1;
+    $resultP = 1;
+    $resultD = 1;
     $tipoCalc = "";
     $botao = "";
-
+    $msg = "";
 
     if(isset($_POST["calcule"])){
         $botao = $_POST["calcule"];
@@ -21,41 +25,48 @@
             $tipoCalc = $_POST["tipo_calculo"];
         }
 
-        function arranjo($n, $p){
+        if($n != null && $p != null){
+            $diferenca = $n-$p;
+        }else{
+            $msg = "Você não digitou os valores corretamente.";
+        }
 
-            $manipN = 0;
-            $totalN = 0;
-            $manipN = $n;
+        while($diferenca > 1){
+            $resultD *= $diferenca;
+            $diferenca--;
+        }
 
-            $manipP = 0;
-            $totalP = 0;
-            $manipP = $p;
+        while($n > 1){
+            $resultN *= $n;
+            $n--;
+        }
 
-            $arranjo = 0;
+        while($p > 1){
+            $resultP *= $p;
+            $p--;
+        }
 
-            while($manipN > 1){
-                $totalN = $manipN;
-                $manipN - 1;
-                $totalN = $totalN * $manipN;
-            }
-
-            while($manipP > 1){
-                $totalP = $manipP;
-                $manipP - 1;
-                $totalP = $totalP * $manipP;
-            }
-
-            $arranjo = $totalN/$totalP;
-
-            return $arranjo;
-
+        function arranjo($resultN, $resultD){
+            $valA = 0;
+            $valA = $resultN/$resultD;
+            return $valA;
+        }
+        function combinacao($resultN, $resultP, $resultD){
+            $valC = 0;
+            $valC = $resultN/($resultP * $resultD);
+            return $valC;
         }
 
         if($tipoCalc == "arranjo"){
-            $calculo = arranjo($n, $p);
+            $calculo = arranjo($resultN, $resultD);
             $result = $calculo;
+        }else if($tipoCalc == "combinacao"){
+            $calculo = combinacao($resultN, $resultP, $resultD);
+            $result = $calculo;
+        }else if($tipoCalc == null){
+            $msg = "Selecione algum tipo de calculo.";
         }
-        
+
     }
 
 ?>
@@ -74,7 +85,7 @@
 
         <h1>Calcule seu arranjo ou combinação.</h1>
 
-        <h3>Mensagens: </h3>
+        <h3>Mensagens: <?php echo $msg ?></h3>
 
         <h4>
             <label for="tipo_calculo">Escolha o tipo de calculo
