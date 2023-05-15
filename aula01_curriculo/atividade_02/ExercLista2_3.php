@@ -17,8 +17,18 @@
         }
 
         function conversor($numero){
-            
+
+            $manip = "";
+
+            if($numero == 50){
+                $manip = "L";
+            }
+
+            return $manip;
+
         }
+
+        $conversor = conversor($numero);
 
     }
 
