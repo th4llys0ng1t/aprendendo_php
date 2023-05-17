@@ -12,23 +12,66 @@
             $numero = $_POST["numero"];
         }
 
-        if($numero > 50 || $numero <= 0){
-            $mensagem = "Fora da faixa permitida.";
-        }
-
         function conversor($numero){
 
             $manip = "";
 
-            if($numero == 50){
-                $manip = "L";
+            if($numero <= 50 && $numero > 0){
+
+                while($numero/50 == 1){
+                    $manip = "L";
+                    $numero -= 50;
+                }
+                while($numero/40 >= 1){
+                    $manip = "XL";
+                    $numero -= 40;
+                }
+                while($numero/10 >= 1){
+                    $manip .= "X";
+                    $numero -= 10;
+                }
+                while($numero/9 >= 1){
+                    $manip .= "IX";
+                    $numero -= 9;
+                }
+                while($numero/5 >= 1){
+                    $manip .= "V";
+                    $numero -= 5;
+                }
+                while($numero/4 >= 1){
+                    $manip .= "IV";
+                    $numero -= 4;
+                }
+                while($numero/3 >= 1){
+                    $manip .= "III";
+                    $numero -= 3;
+                }
+                while($numero/2 >= 1){
+                    $manip .= "II";
+                    $numero -= 2;
+                }
+                while($numero/1 == 1){
+                    $manip .= "I";
+                    $numero -= 1;
+                }
+
+            }else if($numero > 50){
+                $manip = "Número maior que 50.";
+            }else if($numero < 0){
+                $manip = "Número menor 0.";
+            }else if($numero == 0){
+                $manip = "Número igual 0.";
             }
 
             return $manip;
 
         }
 
-        $conversor = conversor($numero);
+        if($numero <= 50 && $numero > 0){
+            $conversor = conversor($numero);
+        }else{
+            $mensagem = conversor($numero);
+        }
 
     }
 
