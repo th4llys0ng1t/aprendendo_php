@@ -2,14 +2,18 @@
 
     $i = 0;
     $merc = array();
+    $merc[0] = "";
+    $merc[1] = "";
+    $merc[2] = "";
+    $merc[3] = "";
 
     if(isset($_POST["compre"])){
         $comprar = $_POST["compre"];
 
-        while($i != null){
+        while($i < 4){
 
             if(isset($_POST["pd". $i])){
-                $merc[$i] = "Mercadoria" . $i . "foi selecionada";
+                $merc[$i] = "Mercadoria " . $i . " foi selecionada <br>";
             }
 
             $i++;
@@ -66,9 +70,10 @@
 <body>
     <?php 
         $t = 0;
-
-        while($t!=null){
+        
+        while($t < 4){
             echo $merc[$t];
+            $t++;
         }
     ?>
 
