@@ -13,6 +13,10 @@
     $qtd[2] = "";
     $qtd[3] = "";
 
+    session_start();
+
+    $_SESSION["number_itens"] = 0;
+
     if(isset($_POST["compre"])){
         $comprar = $_POST["compre"];
 
@@ -50,7 +54,6 @@
         
         while($t < 4){
             echo $merc[$t] . $qtd[$t];
-             
             $t++;
         }
 
