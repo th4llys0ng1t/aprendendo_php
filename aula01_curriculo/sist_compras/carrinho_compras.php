@@ -7,54 +7,30 @@
     $merc[2] = "";
     $merc[3] = "";
 
+    $qtd = array();
+    $qtd[0] = "";
+    $qtd[1] = "";
+    $qtd[2] = "";
+    $qtd[3] = "";
+
     if(isset($_POST["compre"])){
         $comprar = $_POST["compre"];
 
         while($i < 4){
 
             if(isset($_POST["pd". $i])){
-                $merc[$i] = "Mercadoria " . $i . " foi selecionada <br>";
+                $merc[$i] = "Mercadoria " . $i . " foi selecionada";
+            }else{
+                $merc[$i] = "Mercadoria " . $i . " não selecionada";
             }
 
+            if(isset($_POST["qtd".$i])){
+                $qtd[$i] = " || Quantidade: " . $_POST["qtd".$i] . "<br>";
+            }
+            
             $i++;
         }
-        
-        /* 
-            if(isset($_POST["pd1"])){
-                $chinelo = "Mercadoria 1 verificada";
-            }
-
-            if(isset($_POST["qtd1"])){
-                $qtd = $_POST["qtd1"];
-            }
-
-            if(isset($_POST["pd2"])){
-                $chinelo = "Mercadoria 2 verificada";
-            }
-
-            if(isset($_POST["qtd2"])){
-                $qtd = $_POST["qtd2"];
-            }
-
-            if(isset($_POST["pd3"])){
-                $chinelo = "Mercadoria 3 verificada";
-            }
-
-            if(isset($_POST["qtd3"])){
-                $qtd = $_POST["qtd3"];
-            }
-
-            if(isset($_POST["pd4"])){
-                $chinelo = "Mercadoria 4 verificada";
-            }
-
-            if(isset($_POST["qtd4"])){
-                $qtd = $_POST["qtd4"];
-            }
-        */
-    
     }
-
 ?>
 
 <!DOCTYPE html>
@@ -69,12 +45,15 @@
 </head>
 <body>
     <?php 
+
         $t = 0;
         
         while($t < 4){
-            echo $merc[$t];
+            echo $merc[$t] . $qtd[$t];
+             
             $t++;
         }
+
     ?>
 
     <form action="carrinho_compras.php" method="post">
@@ -90,28 +69,28 @@
                 <th>Valor</th>
             </tr>
             <tr>
-                <td>1</td>
+                <td>0</td>
                 <td><input type="checkbox" id="mercadoria0" value="mercadoria0" name="pd0"></td>
                 <td>Chinelo Havaianas</td>
                 <td><input type="number" name="qtd0" min="0"></td>
                 <td>R$ 7,00</td>
             </tr>
             <tr>
-                <td>2</td>
+                <td>1</td>
                 <td><input type="checkbox" id="mercadoria1" value="mercadoria1" name="pd1"></td>
                 <td>Coca-cola</td>
                 <td><input type="number" name="qtd1" min="0"></td>
                 <td>R$ 10,00</td>
             </tr>
             <tr>
-                <td>3</td>
+                <td>2</td>
                 <td><input type="checkbox" id="mercadoria2" value="mercadoria2" name="pd2"></td>
                 <td>Maionese</td>
                 <td><input type="number" name="qtd2" min="0"></td>
                 <td>R$ 5,00</td>
             </tr>
             <tr>
-                <td>4</td>
+                <td>3</td>
                 <td><input type="checkbox" id="mercadoria3" value="mercadoria3" name="pd3"></td>
                 <td>Bola de futebol</td>
                 <td><input type="number" name="qtd3" min="0"></td>
