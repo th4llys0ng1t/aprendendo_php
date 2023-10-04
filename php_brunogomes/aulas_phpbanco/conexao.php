@@ -13,6 +13,6 @@
         echo "Deu bom";
     }
 
-    $conn -> close();
+    //$conn -> close();
 
 ?>

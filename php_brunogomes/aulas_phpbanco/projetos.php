@@ -8,7 +8,23 @@
 </head>
 <body>
     <h1>Projetos</h1>
-    <p><a href="">CADASTRAR</a></p>
+    <p><a href="projeto_cadastrar.php">CADASTRAR</a></p>
     <p>Cursos cadastrados:</p>
+
+    <?php 
+        include 'conexao.php';
+        echo "<br>";
+
+        $sql = 'SELECT * FROM projeto';
+        $resultado = $conn -> query($sql);
+
+        if($resultado -> num_rows>0){
+            echo "Tem algum projeto.";
+        }else{
+            echo "Não tem nenhum projeto.";
+        }
+        
+        $conn -> close();
+    ?>
 </body>
 </html>
