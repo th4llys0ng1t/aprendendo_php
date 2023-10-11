@@ -10,7 +10,7 @@
     if($conn -> connect_error){
         echo "Deu ruim";
     }else{
-        echo "Deu bom";
+        //echo "Deu bom";
     }
 
     //$conn -> close();
