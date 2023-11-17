@@ -13,7 +13,7 @@
                 <a class="nav-link" href="cursos.php">Cursos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cadastro.html"><i class="fa fa-floppy-o"></i> Cadastro</a>
+                <a class="nav-link" href="cadastro.php"><i class="fa fa-floppy-o"></i> Cadastro</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="login.html"><i class="fa fa-sign-in"></i> Login</a>

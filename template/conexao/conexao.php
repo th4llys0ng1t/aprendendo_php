@@ -1,7 +1,6 @@
 <?php
 
-function conectar()
-{
+function conectar(){
     $servidor = "localhost";
     $usuario = "root";
     $senha ="123";
@@ -12,7 +11,6 @@ function conectar()
     if ($conn->connect_error) {
         die("a conexão falhou!" . $conn->connect_error);
     }
-
     return $conn;
 }
 
