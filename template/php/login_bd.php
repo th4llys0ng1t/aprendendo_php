@@ -19,6 +19,11 @@
     //Verificar se retornou algo
     if($resultado->num_rows > 0){
         //Retornou e pode autenticar
+        //Retornar o nome do usuário 
+        while($row = $resultado->fetch_assoc){
+            session_start();
+            $_SESSION["usuario"] = $row["nome"];
+        }
         desconectar($conn);
         header("Location: ../perfil.php");
         die();
