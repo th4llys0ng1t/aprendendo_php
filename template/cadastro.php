@@ -19,7 +19,7 @@
    <div class="row mt-5 mb-5">
     <div class="col-lg-6">
       <h2>Cadastro de Usuário</h2>
-      <form action="" method="post">
+      <form action="php/cadastro_bd.php" method="post">
         <p>
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome">
