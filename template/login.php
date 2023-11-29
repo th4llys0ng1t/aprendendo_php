@@ -14,7 +14,9 @@
 <body>
     <?php include 'bases/menu.php' ?><br>
 
-    <form action="" method="post">
+    <h2>Login</h2>
+    <form action="php/login_bd.php" method="post">
+        
         <p>
             <label for="usuario">Usuário:</label>
             <input type="text" name="usuario" id="usuario">
