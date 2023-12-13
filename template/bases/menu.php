@@ -12,25 +12,40 @@
               <li class="nav-item">
                 <a class="nav-link" href="cursos.php">Cursos</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cadastro.php"><i class="fa fa-floppy-o"></i> Cadastro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html"><i class="fa fa-sign-in"></i> Autenticação</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-user"></i> Perfil
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                  <a class="dropdown-item" href="perfil_dados.html">Meus Dados</a>
-                  <a class="dropdown-item" href="perfil_inscricoes.html">Inscrições</a>
-                  <a class="dropdown-item" href="perfil_cursos.html">Cursos</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
-              </li>
+
+              <?php 
+                if(session_id() == ''){
+                  session_start();
+                }
+                
+                if(isset($_SESSION["usuario"])){
+              ?>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cadastro.php"><i class="fa fa-floppy-o"></i> Cadastro</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.php"><i class="fa fa-sign-in"></i> Autenticação</a>
+                  </li>
+              <?php 
+                }else{
+              ?>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fa fa-user"></i> Perfil
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                      <a class="dropdown-item" href="perfil_dados.html">Meus Dados</a>
+                      <a class="dropdown-item" href="perfil_inscricoes.html">Inscrições</a>
+                      <a class="dropdown-item" href="perfil_cursos.html">Cursos</a>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="sessao/desconectar.php"><i class="fa fa-sign-out"></i> Logout</a>
+                  </li>
+              <?php 
+                }
+              ?>
+
             </ul>
           </div>
         </div>
