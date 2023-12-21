@@ -20,15 +20,6 @@
                 
                 if(isset($_SESSION["usuario"])){
               ?>
-                  <li class="nav-item">
-                    <a class="nav-link" href="cadastro.php"><i class="fa fa-floppy-o"></i> Cadastro</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="login.php"><i class="fa fa-sign-in"></i> Autenticação</a>
-                  </li>
-              <?php 
-                }else{
-              ?>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fa fa-user"></i> Perfil
@@ -41,6 +32,16 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="sessao/desconectar.php"><i class="fa fa-sign-out"></i> Logout</a>
+                  </li>
+                  
+              <?php 
+                }else{
+              ?>
+                  <li class="nav-item">
+                    <a class="nav-link" href="cadastro.php"><i class="fa fa-floppy-o"></i> Cadastro</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="login.php"><i class="fa fa-sign-in"></i> Autenticação</a>
                   </li>
               <?php 
                 }
